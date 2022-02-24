@@ -100,6 +100,51 @@
         <!-- ./col -->
         
         <!-- ./col -->
+        <div class="col-lg-12 col-xs-6">
+        <div id="curve_chart" style="width: 100%; height: 500px"></div>
+        </div>
       </div>
       <!-- /.row -->
+      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+      <script type="text/javascript">
+        $.ajax({
+          url: "/admin/bill/get/bill", 
+          success: function(res){
+            console.log(res);
+            google.charts.load('current', {'packages':['corechart']});
+            google.charts.setOnLoadCallback(drawChart);
+
+            function drawChart() {
+              var arrReve = [];
+              for ( var i = 0; i <= res.length; i++ ){
+                if( i == 0 ){
+                  arrReve[i] = new Array('Time', 'Total');
+                }else{
+                  arrReve[i] = new Array(res[i-1]['date_order'], res[i-1]['total']);
+                }
+              }
+              console.log(arrReve);
+                var data = google.visualization.arrayToDataTable(arrReve);
+                // var data = google.visualization.arrayToDataTable([
+                //   ['Year', 'Sales', 'Expenses'],
+                //   ['2004',  1000,      400],
+                //   ['2005',  1170,      460],
+                //   ['2006',  660,       1120],
+                //   ['2007',  1030,      540]
+                // ]);
+
+                var options = {
+                  title: 'Revenue Analysis',
+                  curveType: 'function',
+                  legend: { position: 'bottom' }
+                };
+
+                var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+                chart.draw(data, options);
+
+            }
+          }
+        });
+      </script>
 @endsection

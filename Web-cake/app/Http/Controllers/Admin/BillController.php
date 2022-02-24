@@ -232,4 +232,9 @@ class BillController extends Controller
                     '<a href="bill/details/'.$bill->id.'" class="btn btn-danger btn-xs">Details</a>';
             })->make(true);
     }
+
+    public function getBill() {
+        $bill = Bill::all();
+        return $bill;
+    }
 }

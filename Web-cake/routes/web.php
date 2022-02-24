@@ -65,6 +65,8 @@ Route::group(['prefix' => 'admin','middleware'=>'isAdmin'], function () {
     Route::group(['prefix' => 'bill'], function() {
         // Api get bill
         Route::get('api/bill', 'Admin\BillController@apiBill')->name('api.bill');
+        // get bill
+        Route::get('get/bill', 'Admin\BillController@getBill');
 
         // Show list bill
         Route::get('/', 'Admin\BillController@index')->name('admin.bill.index');
