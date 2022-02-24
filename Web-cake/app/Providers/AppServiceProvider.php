@@ -20,8 +20,9 @@ class AppServiceProvider extends ServiceProvider
     {
         //
         \Schema::defaultStringLength(191);
-
+        // $slideModal = new Slide();
         if (Schema::hasTable('slides')) {
+            // $slides = $slideModal->all();
             $slides = Slide::all();
             View::share('slides', $slides);
         }

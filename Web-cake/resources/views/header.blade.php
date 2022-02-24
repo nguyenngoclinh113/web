@@ -20,6 +20,14 @@
 				<p class="header">Mật khẩu</p>
 				<input type="password" name="Password" placeholder="Nhập mật khẩu"  required="required">
 				<input type="submit" class="sign-in" value="Sign In">
+
+				<div class="row">
+					<div class="col-md-12 ">
+					<a href="{{ url('auth/google') }}" class="btn btn-lg btn-danger btn-block" style="margin-top:10px">
+					<strong>Login With Google</strong>
+					</a> 
+					</div>
+				</div>
 			</form> 
 			<br><br><a href="{{url('user/forgetpassword')}}" style="color:#FFA803; font-weight: bold;">* Quên mật khẩu</a>
 		</div>
@@ -38,8 +46,7 @@
 				
 				<p class="header">Nhập lại mật khẩu</p>
 				<input type="password" name="cpassword" placeholder="Nhập lại mật khẩu"  required="required">
-				<a href="{{ route('login.provider', 'google') }}" 
-      class="btn btn-secondary">{{ __('Google Sign in') }}</a>
+				
 				<input type="submit" class="register" value="Sign up">
 			</form>
 

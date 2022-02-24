@@ -309,7 +309,11 @@ Route::get('bills/{id}/export',
 	'uses' => 'UserController@exportBill'
 ]);
 
+Route::get('confirmVnPay', 'BillController@confirmVnPay');
+Route::get('auth/google', 'UserController@redirectToGoogle');
+Route::get('auth/google/callback', 'UserController@handleGoogleCallback');
+
 Auth::routes();
 
-Route::get('/redirect', 'UserController@redirectToProvider')->name("login.provider");
-Route::get('/callback', 'UserController@handleProviderCallback');
+
+

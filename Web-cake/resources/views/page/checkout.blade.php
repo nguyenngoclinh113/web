@@ -99,7 +99,7 @@
 							<div class="your-order-body">
 								<ul class="payment_methods methods">
 									<li class="payment_method_bacs">
-										<input id="payment_method_bacs" type="radio" class="input-radio" name="payment_method" value="COD" checked="checked" data-order_button_text="">
+										<input id="payment_method_bacs" type="radio" class="input-radio" name="payment_method" value="COD"  data-order_button_text="" checked="checked">
 										<label for="payment_method_bacs">Thanh toán khi nhận hàng </label>
 										<div class="payment_box payment_method_bacs" style="display: block;">
 											Cửa hàng sẽ gửi hàng đến địa chỉ của bạn, bạn xem hàng rồi thanh toán tiền cho nhân viên giao hàng
@@ -108,12 +108,9 @@
 
 									<li class="payment_method_cheque">
 										<input id="payment_method_cheque" type="radio" class="input-radio" name="payment_method" value="ATM" data-order_button_text="">
-										<label for="payment_method_cheque">Chuyển khoản </label>
+										<label for="payment_method_cheque">Thanh toán Online</label>
 										<div class="payment_box payment_method_cheque" style="display: none;">
-											Chuyển tiền đến tài khoản sau:
-											<br>- Số tài khoản: 123456789908
-											<br>- Chủ TK: Phan Thanh Hùng
-											<br>- Ngân hàng VietComBank, Chi nhánh Đà Nẵng
+											<img src="upload/product/image/vnpay.png" />	
 										</div>						
 									</li>
 									

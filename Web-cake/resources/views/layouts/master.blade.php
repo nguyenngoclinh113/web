@@ -3,11 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
-	<title>Admin</title>
-=======
 	<title>Sweet Bakery</title>
->>>>>>> f8bbae8ecd7cdaf945b1334a0b20bed9a7af1df4
 	<base href="{{asset('')}}">
 	
 	
