@@ -311,6 +311,8 @@ Route::get('bills/{id}/export',
 	'uses' => 'UserController@exportBill'
 ]);
 
+Route::match(['get', 'post'], '/botman', 'BotManController@handle');
+
 Route::get('confirmVnPay', 'BillController@confirmVnPay');
 Route::get('auth/google', 'UserController@redirectToGoogle');
 Route::get('auth/google/callback', 'UserController@handleGoogleCallback');

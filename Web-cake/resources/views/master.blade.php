@@ -606,5 +606,22 @@ $(document).ready(function now($) {
     	if(newVal>=1) divUpd.text(newVal);	
     });
 </script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/assets/css/chat.min.css">
+    <script>
+	    // var botmanWidget = {
+	    //     aboutText: 'ssdsd',
+	    //     introMessage: "✋ Hi! I'm Linh form FPT Greenwich"
+	    // };
+		var botmanWidget = {
+    title:'Scarletbot',
+    introMessage: 'Hi, Linh from FPT Greenwich',
+    mainColor:'#c02026',
+    aboutText:'',
+    bubbleBackground:'#c02026',
+    headerTextColor: '#fff',
+};
+    </script>
+  
+    <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
 </body>
 </html>
