@@ -606,7 +606,15 @@ $(document).ready(function now($) {
     	if(newVal>=1) divUpd.text(newVal);	
     });
 </script>
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/assets/css/chat.min.css">
+<style>
+	.aco-nav .default-nav{
+		border: 1px solid #e3e3e3;
+	}
+	.aco-nav .default-nav .main-nav{
+		background-color: #ffa803;
+	}
+</style>
+{{-- <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/assets/css/chat.min.css">
     <script>
 	    // var botmanWidget = {
 	    //     aboutText: 'ssdsd',
@@ -622,6 +630,7 @@ $(document).ready(function now($) {
 };
     </script>
   
-    <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script> --}}
+	<script src="http://brainshop.ai/api/aco.js?bid=164451&key=fRXe4bSzbC5dMc25"></script>
 </body>
 </html>

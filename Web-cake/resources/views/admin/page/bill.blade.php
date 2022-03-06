@@ -14,8 +14,10 @@
                         <th>Name</th>
                         <th>Phone</th>
                         <th>Address</th>
+                        <th>Address_ship</th>
                         <th>Date order</th>
                         <th>Total</th>
+                        <th>Status</th>
                         <th>Payment</th>
                         <th>Note</th>
                         <th>Action</th>
@@ -52,8 +54,10 @@
                 {data: 'name', name: 'name'},
                 {data: 'phone', name: 'phone'},
                 {data: 'address', name: 'address'},
+                {data: 'address_ship', name: 'address_ship'},
                 {data: 'date_order', name: 'date_order'},
                 {data: 'total', name: 'total',},
+                {data: 'status', name: 'status'},
                 {data: 'payment', name: 'payment'},
                 {data: 'note', name: 'note'},
                 {data: 'action', name: 'action', orderable: false, searchable: false},
@@ -85,8 +89,10 @@
                     $('#name').val(data.name);
                     $('#phone').val(data.phone);
                     $('#address').val(data.address);
+                    $('#address_ship').val(data.address_ship);
                     $('#date_order').val(data.date_order);
                     $('#total').val(data.total);
+                    $('#status').val(data.status);
                     $('#payment').val(data.payment);
                     $('#note').val(data.note);
                 },

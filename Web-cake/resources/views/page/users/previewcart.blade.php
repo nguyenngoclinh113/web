@@ -51,7 +51,9 @@
           <td>{{$bill->id}}</td>
           <td>{{ date('d.m.Y H:i:s', strtotime($bill->created_at)) }}</td>
           <td>{{$bill->address}}</td>
-          <td>@if($bill->deleted_at != "") Đã hủy @elseif($bill->status == 0) Đang xử lí @else Thành công @endif</td>
+          
+          <td>@if($bill->deleted_at != "") Đã hủy @elseif($bill->status == 0) Đang xử lí @elseif($bill->status == 2 && $bill->address_ship !== "" && $bill->address_ship !== null ) Đang giao hàng @else Thành công @endif</td>
+
           <td><a href="" class="btn btn-primary" role="dialog" data-toggle="modal" data-target="#myModal{{$bill->id}}"><i class="fa fa-star-o" style="color:white;"></i>&nbsp;View</a> </td>
           <td >@if($bill->status == 1) 
                 <i class="fa fa-check" style="color:blue; margin-top: 10px"></i>
@@ -96,6 +98,66 @@
     </div>
     <div class="clearfix"></div>
 </div>
+@if($bill->status == 2 && $bill->address_ship !== "" && $bill->address_ship !== null )
+<div class="container mixcontainer">
+<div id="map-canvas" style="width:100%;height:500px;margin-top:-30px;margin-bottom:50px"></div>
+<script  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyArNrTAvZ8Ghgdqae9xXHsCm507YKX8_3w"></script>
+<script>
+function initMap() {
+    var pointA = "110 Đường Phạm Như Xương, Hòa Khánh Nam, Liên Chiểu, Đà Nẵng",
+        pointB = "{{$bill->address_ship}}",
+    // var pointA = new google.maps.LatLng(51.7519, -1.2578),
+    //     pointB = new google.maps.LatLng(50.8429, -0.1313),
+        myOptions = {
+            zoom: 7,
+            center: pointA
+        },
+        map = new google.maps.Map(document.getElementById('map-canvas'), myOptions),
+        // Instantiate a directions service.
+        directionsService = new google.maps.DirectionsService,
+        directionsDisplay = new google.maps.DirectionsRenderer({
+            map: map
+        }),
+        markerA = new google.maps.Marker({
+            position: pointA,
+            title: "point A",
+            label: "A",
+            map: map
+        }),
+        markerB = new google.maps.Marker({
+            position: pointB,
+            title: "point B",
+            label: "B",
+            map: map
+        });
+
+    // get route from A to B
+    calculateAndDisplayRoute(directionsService, directionsDisplay, pointA, pointB);
+
+}
+
+
+
+function calculateAndDisplayRoute(directionsService, directionsDisplay, pointA, pointB) {
+    directionsService.route({
+        origin: pointA,
+        destination: pointB,
+        avoidTolls: true,
+        avoidHighways: false,
+        travelMode: google.maps.TravelMode.DRIVING
+    }, function (response, status) {
+        if (status == google.maps.DirectionsStatus.OK) {
+            directionsDisplay.setDirections(response);
+        } else {
+            window.alert('Directions request failed due to ' + status);
+        }
+    });
+}
+
+initMap();
+</script>
+</div>
+@endif
 @foreach ($bills as $bill)
 
 <div class="modal fade" id="myModal{{$bill->id}}" tabindex="-1" role="dialog" aria-labelledby="myModal{{$bill->id}}"

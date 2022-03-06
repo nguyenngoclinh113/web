@@ -9,7 +9,7 @@ class Bill extends Model
 {
 	use SoftDeletes;
     protected $fillable = [
-        'user_id', 'name', 'phone', 'address', 'date_order', 'total', 'payment', 'note', 'status',
+        'user_id', 'name', 'phone', 'address','address_ship', 'date_order', 'total', 'payment', 'note', 'status'
     ];
     protected $date = ['deleted_at'];
 

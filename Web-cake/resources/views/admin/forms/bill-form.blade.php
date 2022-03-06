@@ -29,6 +29,14 @@
                     </div>
 
                     <div class="form-group">
+                        <label for="phone" class="col-md-3 control-label">Address</label>
+                        <div class="col-md-6">
+                            <input type="text" id="address" name="address" class="form-control"  required>
+                            <span class="help-block with-errors"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
                         <label for="date_order" class="col-md-3 control-label">Date order</label>
                         <div class="col-md-6">
                             <input type="text" id="date_order" name="date_order" class="form-control"  required>
@@ -53,6 +61,18 @@
                     </div>
 
                     <div class="form-group">
+                        <label for="role" class="col-md-3 control-label">Status</label>
+                        <div class="col-md-6">
+                            <select id="status" name="status">
+                                <!-- <option>Processing</option> -->
+                                <option value="0">Đang xử lí</option>
+                                <option value="2">Đang giao hàng</option>
+                                <option value="1">Thành công</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
                         <label for="role" class="col-md-3 control-label">Payment</label>
                         <div class="col-md-6">
                             <select id="payment" name="payment">
@@ -60,6 +80,14 @@
                                 <option value="COD">COD</option>
                                 <option value="ATM">ATM</option>
                             </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone" class="col-md-3 control-label">Address ship</label>
+                        <div class="col-md-6">
+                            <input type="text" id="address_ship" name="address_ship" class="form-control"  required>
+                            <span class="help-block with-errors"></span>
                         </div>
                     </div>
 
