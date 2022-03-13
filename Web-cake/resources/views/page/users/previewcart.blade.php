@@ -98,7 +98,8 @@
     </div>
     <div class="clearfix"></div>
 </div>
-@if($bill->status == 2 && $bill->address_ship !== "" && $bill->address_ship !== null )
+@if( isset($bill) )
+@if($bill->status == 2 && $bill->address_ship !== "" && $bill->address_ship !== null && !$bill->isEmpty() )
 <div class="container mixcontainer">
 <div id="map-canvas" style="width:100%;height:500px;margin-top:-30px;margin-bottom:50px"></div>
 <script  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyArNrTAvZ8Ghgdqae9xXHsCm507YKX8_3w"></script>
@@ -107,7 +108,7 @@ function initMap() {
     var pointA = "110 Đường Phạm Như Xương, Hòa Khánh Nam, Liên Chiểu, Đà Nẵng",
         pointB = "{{$bill->address_ship}}",
     // var pointA = new google.maps.LatLng(51.7519, -1.2578),
-    //     pointB = new google.maps.LatLng(50.8429, -0.1313),
+    //     pointB = new google.maps.LatLng(50.8429, -0.1313),c
         myOptions = {
             zoom: 7,
             center: pointA
@@ -157,6 +158,7 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay, pointA, 
 initMap();
 </script>
 </div>
+@endif
 @endif
 @foreach ($bills as $bill)
 
