@@ -99,7 +99,7 @@
     <div class="clearfix"></div>
 </div>
 @if( isset($bill) )
-@if($bill->status == 2 && $bill->address_ship !== "" && $bill->address_ship !== null && !$bill->isEmpty() )
+@if($bill->status == 2 && $bill->address_ship !== "" && $bill->address_ship !== null )
 <div class="container mixcontainer">
 <div id="map-canvas" style="width:100%;height:500px;margin-top:-30px;margin-bottom:50px"></div>
 <script  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyArNrTAvZ8Ghgdqae9xXHsCm507YKX8_3w"></script>
