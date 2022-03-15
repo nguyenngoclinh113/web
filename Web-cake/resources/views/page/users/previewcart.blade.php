@@ -52,7 +52,7 @@
           <td>{{ date('d.m.Y H:i:s', strtotime($bill->created_at)) }}</td>
           <td>{{$bill->address}}</td>
           
-          <td>@if($bill->deleted_at != "") Đã hủy @elseif($bill->status == 0) Đang xử lí @elseif($bill->status == 2 && $bill->address_ship !== "" && $bill->address_ship !== null ) Đang giao hàng @else Thành công @endif</td>
+          <td>@if($bill->deleted_at != "") Đã hủy @elseif($bill->status == 0) Đang xử lí @elseif($bill->status == 2 && $bill->address_ship !== "" && $bill->address_ship !== null ) Đang giao hàng <a onclick="initMap('{{$bill->address_ship}}')" href="javascript:void(0);" class="btn btn-primary"><i class="fa fa-map-marker style="color:white;"></i>&nbsp;View</a> @else Thành công @endif</td>
 
           <td><a href="" class="btn btn-primary" role="dialog" data-toggle="modal" data-target="#myModal{{$bill->id}}"><i class="fa fa-star-o" style="color:white;"></i>&nbsp;View</a> </td>
           <td >@if($bill->status == 1) 
@@ -98,17 +98,17 @@
     </div>
     <div class="clearfix"></div>
 </div>
-@if( isset($bill) )
-@if($bill->status == 2 && $bill->address_ship !== "" && $bill->address_ship !== null )
+{{-- @if($bill->status == 2 && $bill->address_ship !== "" && $bill->address_ship !== null ) --}}
 <div class="container mixcontainer">
 <div id="map-canvas" style="width:100%;height:500px;margin-top:-30px;margin-bottom:50px"></div>
 <script  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyArNrTAvZ8Ghgdqae9xXHsCm507YKX8_3w"></script>
 <script>
-function initMap() {
+function initMap(location) {
     var pointA = "110 Đường Phạm Như Xương, Hòa Khánh Nam, Liên Chiểu, Đà Nẵng",
-        pointB = "{{$bill->address_ship}}",
+        // pointB = "{{$bill->address_ship}}",
+        pointB = location,
     // var pointA = new google.maps.LatLng(51.7519, -1.2578),
-    //     pointB = new google.maps.LatLng(50.8429, -0.1313),c
+    //     pointB = new google.maps.LatLng(50.8429, -0.1313),
         myOptions = {
             zoom: 7,
             center: pointA
@@ -155,11 +155,10 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay, pointA, 
     });
 }
 
-initMap();
+// initMap();
 </script>
 </div>
-@endif
-@endif
+{{-- @endif --}}
 @foreach ($bills as $bill)
 
 <div class="modal fade" id="myModal{{$bill->id}}" tabindex="-1" role="dialog" aria-labelledby="myModal{{$bill->id}}"

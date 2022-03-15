@@ -24,6 +24,13 @@
 	<!-- <link rel="stylesheet" href="source/assets/dest/css/special.css"> -->
 	<!-- <link rel="stylesheet" href="css/jquery-ui.css"> -->
 	<link rel="stylesheet" title="style" href="source/assets/dest/css/huong-style.css"> 
+	<style>
+		.form-search .btn{
+			margin: 0;
+            min-width: 0;
+            background-color: #d43f3a;
+		}
+	</style>
 </head>
 <body onload="now();">
 	@include('header')
@@ -614,7 +621,7 @@ $(document).ready(function now($) {
 		background-color: #ffa803;
 	}
 </style>
-{{-- <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/assets/css/chat.min.css">
+	<link rel="stylesheet" type="text/css" href="/css/chat.css">
     <script>
 	    // var botmanWidget = {
 	    //     aboutText: 'ssdsd',
@@ -630,7 +637,7 @@ $(document).ready(function now($) {
 };
     </script>
   
-    <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script> --}}
-	<script src="http://brainshop.ai/api/aco.js?bid=164451&key=fRXe4bSzbC5dMc25"></script>
+    <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
+	<!-- <script src="http://brainshop.ai/api/aco.js?bid=164451&key=fRXe4bSzbC5dMc25"></script> -->
 </body>
 </html>
